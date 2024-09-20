@@ -1,0 +1,6 @@
+services:
+  servizo1:
+    image: httpd
+      ports:
+      - 80:80
+      - 443:443
