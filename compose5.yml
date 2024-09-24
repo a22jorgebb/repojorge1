@@ -10,12 +10,22 @@ services:
     image: mysql
     ports:
       - 3306:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=abc123..
-      - MYSQL_DATABASE=db1
-      - MYSQL_USER=a22jorgebb
-      - MYSQL_PASSWORD=abc123..
+    env_file:
+      - .env
+
 #    volumes:
 #      - datosbd:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:8080
+    environment:
+      - PMA_ARBITRARY=1
+      # - PMA_HOST=servizo2
 volumes:
   datosbd:
+
+
+## secret incompleto
+## secrets:
+##  my_secret:
